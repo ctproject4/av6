@@ -22,21 +22,21 @@
 
  <target name="clean" description="Cleanup build artifacts">
 <!--  <echo msg="Deleting Build directories..."/> --> 
-  <delete dir="${project.basedir}/build/api"/>
-  <delete dir="${project.basedir}/build/code-browser"/>
-  <delete dir="${project.basedir}/build/coverage"/>
-  <delete dir="${project.basedir}/build/logs"/>
-  <delete dir="${project.basedir}/build/pdepend"/>
+  <delete dir="${basedir}/build/api"/>
+  <delete dir="${basedir}/build/code-browser"/>
+  <delete dir="${basedir}/build/coverage"/>
+  <delete dir="${basedir}/build/logs"/>
+  <delete dir="${basedir}/build/pdepend"/>
  </target>
 
  <target name="prepare" depends="clean" description="Prepare for build">
   <!-- <echo msg="Creating Build directories..."/> -->
-  <mkdir dir="${project.basedir}/build/api"/>
-  <mkdir dir="${project.basedir}/build/code-browser"/>
-  <mkdir dir="${project.basedir}/build/coverage"/>
-  <mkdir dir="${project.basedir}/build/logs"/>
-  <mkdir dir="${project.basedir}/build/pdepend"/>
-  <mkdir dir="${project.basedir}/build/phpdox"/>
+  <mkdir dir="${basedir}/build/api"/>
+  <mkdir dir="${basedir}/build/code-browser"/>
+  <mkdir dir="${basedir}/build/coverage"/>
+  <mkdir dir="${basedir}/build/logs"/>
+  <mkdir dir="${basedir}/build/pdepend"/>
+  <mkdir dir="${basedir}/build/phpdox"/>
  </target>
 
  <target name="lint" description="Perform syntax check of sourcecode files">
@@ -44,19 +44,19 @@
   <apply executable="php" taskname="lint">
    <arg value="-l" />
 
-   <fileset dir="/var/lib/jenkins/workspace/php2/app/controllers">
+   <fileset dir="${basedir}/app/controllers">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${project.basedir}/app/database/migrations">
+   <fileset dir="${basedir}/app/database/migrations">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${project.basedir}/app/models">
+   <fileset dir="${basedir}/app/models">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${project.basedir}/app/tests">
+   <fileset dir="${basedir}/app/tests">
     <include name="**/*.php" />
    </fileset>
   </apply>
