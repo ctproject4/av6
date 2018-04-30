@@ -44,7 +44,7 @@
   <apply executable="php" taskname="lint">
    <arg value="-l" />
 
-   <fileset dir="${project.basedir}/../app/controllers">
+   <fileset dir="/var/lib/jenkins/workspace/php2/app/controllers">
     <include name="**/*.php" />
    </fileset>
 
