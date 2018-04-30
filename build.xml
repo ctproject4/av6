@@ -44,7 +44,7 @@
   <apply executable="php" taskname="lint">
    <arg value="-l" />
 
-   <fileset dir="${project.basedir}/app/controllers">
+   <fileset dir="${project.basedir}/../app/controllers">
     <include name="**/*.php" />
    </fileset>
 
